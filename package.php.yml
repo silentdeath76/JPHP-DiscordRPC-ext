@@ -1,0 +1,34 @@
+name: jphp-discord-rpc-ext
+version: 1.0.0
+deps:
+  jphp-runtime: '*'
+devDeps:
+  dn-bundle-plugin: '*'
+sources:
+  - src
+config:
+  ignore:
+    - /sandbox/**
+    - /.idea/**
+    - /*.iml
+    - /.git/**
+    - /examples/**
+    - /package.hub.yml
+    - /bundle/**
+    - build
+    - out
+    - target
+    - pom.xml
+    - /src-bundle/**
+    - /README.MD
+    - /.gitignore
+    - .gradle
+
+develnext-bundle:
+  version: 1.0.0
+  name: DiscordRpc
+  author: silentrs
+  icon: "develnext/bundle/discord_rpc/icon.png"
+  description: "Расширение для работы с DiscordRPC"
+  group: "Ethernet"
+  class: develnext\bundle\discord_rpc\DiscordRPCBundle
