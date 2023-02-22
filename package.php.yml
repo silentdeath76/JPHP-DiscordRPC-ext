@@ -4,8 +4,10 @@ deps:
   jphp-runtime: '*'
 devDeps:
   dn-bundle-plugin: '*'
+
 sources:
   - src
+
 config:
   ignore:
     - /sandbox/**
