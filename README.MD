@@ -1,5 +1,7 @@
 # JPHP-DiscordRPC-ext
 
+Библиотека на основе которой собрано [Vatuu/discord-rpc](https://github.com/Vatuu/discord-rpc)
+
 ##### Как пользоваться:
 
 1. Чтобы использовать пакет вам надо создать приложение в [discord](https://discord.com/developers/applications).
