@@ -164,7 +164,7 @@ public class DiscordRPCObject extends BaseObject {
 
         rich.setDetails(this.details);
 
-        if (!this.bigImageId.isEmpty()) {
+        if (this.bigImageId != null) {
             rich.setBigImage(this.bigImageId, this.bigImageHint);
         }
 
