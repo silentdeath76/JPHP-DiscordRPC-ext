@@ -23,9 +23,9 @@ $discord->on(DiscordRPC::EVENT_READY, function (User $user) {
     // $avatar = "https://cdn.discordapp.com/avatars/" . $user->getId() . "/" . $user->getAvatar() . ".png";
     var_dump($user->getName());
 });
+$discord->updateState();
 ```
 
-Для обновления данных ипользуем метод `updateState`
 <br><br>
 События в основном бесполезные тут (имхо конечно), единственное для которого есть применение это `DiscordRPC::EVENT_READY` т.к. там возвращается объект User с данными
 <br><br>
