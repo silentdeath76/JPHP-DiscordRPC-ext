@@ -15,6 +15,7 @@
 - `->`[`setStartTimestamp()`](#method-setstarttimestamp)
 - `->`[`setEndTimestamp()`](#method-setendtimestamp)
 - `->`[`setParty()`](#method-setparty)
+- `->`[`clear()`](#method-clear)
 - `->`[`setSecrets()`](#method-setsecrets)
 - `->`[`updateState()`](#method-updatestate)
 
@@ -89,6 +90,15 @@ setEndTimestamp(mixed $timestamp): void
 ### setParty()
 ```php
 setParty(mixed $id, mixed $size, mixed $max): void
+```
+
+---
+
+<a name="method-clear"></a>
+
+### clear()
+```php
+clear(): void
 ```
 
 ---

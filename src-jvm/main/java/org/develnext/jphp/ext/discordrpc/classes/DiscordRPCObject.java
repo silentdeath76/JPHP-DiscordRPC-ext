@@ -22,7 +22,6 @@ public class DiscordRPCObject extends BaseObject {
     public static final String EVENT_JOIN = "join";
 
 
-    private String appId;
     private String state;
     private String details;
     private String bigImageId;
@@ -50,7 +49,6 @@ public class DiscordRPCObject extends BaseObject {
 
     @Reflection.Signature
     public void __construct(String appId) {
-        this.appId = appId;
 
         DiscordEventHandlers handlers = new DiscordEventHandlers.Builder()
                 .setReadyEventHandler((user) -> {
@@ -97,7 +95,7 @@ public class DiscordRPCObject extends BaseObject {
                     }
                 }).build();
 
-        DiscordRPC.discordInitialize(this.appId, handlers, true);
+        DiscordRPC.discordInitialize(appId, handlers, true);
     }
 
     @Reflection.Signature
@@ -158,6 +156,7 @@ public class DiscordRPCObject extends BaseObject {
     @Reflection.Signature
     public void updateState() {
         DiscordRichPresence.Builder rich = new DiscordRichPresence.Builder(this.state);
+
         if (this.partyId != null) {
             rich.setParty(this.partyId, this.partySize, this.partySizeMax);
         }
@@ -219,6 +218,7 @@ public class DiscordRPCObject extends BaseObject {
         }
     }
 
+    @Reflection.Signature
     public void clear() {
         DiscordRPC.discordClearPresence();
     }

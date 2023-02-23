@@ -43,6 +43,10 @@ class DiscordRPC
     {
     }
 
+    public function clear(): void
+    {
+    }
+
     public function setSecrets($join, $spectate): void
     {
     }
