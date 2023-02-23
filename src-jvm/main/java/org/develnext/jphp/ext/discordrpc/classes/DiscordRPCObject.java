@@ -168,7 +168,7 @@ public class DiscordRPCObject extends BaseObject {
         }
 
         if (this.smallImageId != null) {
-            rich.setBigImage(this.smallImageId, this.smallImageHint);
+            rich.setSmallImage(this.smallImageId, this.smallImageHint);
         }
 
         if (this.startTimestamp < Long.MAX_VALUE && this.startTimestamp > Long.MIN_VALUE) {
