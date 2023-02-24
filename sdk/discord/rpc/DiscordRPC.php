@@ -10,6 +10,7 @@ class DiscordRPC
     const EVENT_DISCONNECTED = "disconnected";
     const EVENT_ERROR = "error";
     const EVENT_JOIN = "join";
+    const EVENT_JOIN_REQUEST = "joinRequest";
 
     public function __construct($appId)
     {
@@ -56,6 +57,10 @@ class DiscordRPC
     }
 
     public function updateCallbacks(): void
+    {
+    }
+
+    public function on($event, callable $callback): void
     {
     }
 }

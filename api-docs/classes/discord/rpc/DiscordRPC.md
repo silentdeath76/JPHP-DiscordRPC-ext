@@ -19,6 +19,7 @@
 - `->`[`setSecrets()`](#method-setsecrets)
 - `->`[`updateState()`](#method-updatestate)
 - `->`[`updateCallbacks()`](#method-updatecallbacks)
+- `->`[`on()`](#method-on)
 
 ---
 # Methods
@@ -127,4 +128,13 @@ updateState(): void
 ### updateCallbacks()
 ```php
 updateCallbacks(): void
+```
+
+---
+
+<a name="method-on"></a>
+
+### on()
+```php
+on(mixed $event, callable $callback): void
 ```

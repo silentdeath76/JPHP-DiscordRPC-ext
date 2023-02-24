@@ -7,6 +7,7 @@ import org.develnext.jphp.ext.discordrpc.DiscordRPCExtension;
 
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
+import php.runtime.invoke.InvokeHelper;
 import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseObject;
 import php.runtime.reflection.ClassEntity;
@@ -20,6 +21,7 @@ public class DiscordRPCObject extends BaseObject {
     public static final String EVENT_DISCONNECTED = "disconnected";
     public static final String EVENT_ERROR = "error";
     public static final String EVENT_JOIN = "join";
+    public static final String EVENT_JOIN_REQUEST = "joinRequest";
 
 
     private String state;
@@ -42,6 +44,7 @@ public class DiscordRPCObject extends BaseObject {
     private Invoker disconnectedCallback;
     private Invoker errorCallback;
     private Invoker joinCallback;
+    private Invoker joinRequestCallback;
 
     public DiscordRPCObject(Environment env, ClassEntity clazz) {
         super(env, clazz);
@@ -89,6 +92,16 @@ public class DiscordRPCObject extends BaseObject {
                     try {
                         if (this.errorCallback != null) {
                             this.errorCallback.callAny(i, s);
+                        }
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                    }
+                }).setJoinRequestEventHandler(discordUser -> {
+                    UserObject userObject = new UserObject(__env__, discordUser);
+
+                    try {
+                        if (this.joinRequestCallback != null) {
+                            this.joinRequestCallback.callAny(userObject);
                         }
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
@@ -213,6 +226,11 @@ public class DiscordRPCObject extends BaseObject {
 
             case EVENT_JOIN: {
                 this.joinCallback = callback;
+            }
+            break;
+
+            case EVENT_JOIN_REQUEST: {
+                this.joinRequestCallback = callback;
             }
             break;
         }
