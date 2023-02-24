@@ -6,28 +6,45 @@
 
 1. Чтобы использовать пакет вам надо создать приложение в [discord](https://discord.com/developers/applications).
 2. Название `игры \ приложения` - это название вашего приложения, вы его можете в любой момент поменять в настройках по ссылку в 1 пункте.
-3. Чтобы ваше приложение отображало иконку, надо загрузить изображения в "Rich Presence" нажимаете "Add Image", загружаете и даете ID вашей картинке (может не сразу работать, у меня только через пару минут начало подгружать ее)
+3. Чтобы ваше приложение отображало иконку, надо загрузить изображения в "Rich Presence", загружаете и даете ID вашей картинке (может не сразу работать, у меня только через пару минут начало подгружать ее)
+
 ```php
 $discord->setBigImage("ID картинки что вы указали");
 ```
 
+##### Простой пример
 ```php
 $discord = new DiscordRPC($appId);
-$discord->setState("Игроков на сервере"); // заголовок если исопльзуется метод setParty 
-$discord->setBigImage("cover");
-$discord->setSmallImage("cover");
-$discord->setDetails("..."); // Подзагловок
-$discord->setParty("ID", 15, 60); // я не до конца разобрался для чего первый аргумент (вообще не разбирался) по этому, можно все что угодно указать
-$discord->setStartTimestamp((Time::now())->getTime()); // нужен чтобы отображалось сколько времени вы провели в вашем приложении
-$discord->on(DiscordRPC::EVENT_READY, function (User $user) {
-    // $avatar = "https://cdn.discordapp.com/avatars/" . $user->getId() . "/" . $user->getAvatar() . ".png";
-    var_dump($user->getName());
-});
+
+// заголовок если исопльзуется метод setParty 
+$discord->setState("Игроков на сервере");
+
+// hint - не обязательно указывать
+$discord->setBigImage("BImage", "hint");
+$discord->setSmallImage("SImageDefault", "hint");
+
+// Подзагловок
+$discord->setDetails("...");
+
+// я не до конца разобрался для чего первый аргумент (вообще не разбирался, понятно что это ID но как с ним работать без понятия)
+// по этому можно указать все что угодно
+$discord->setParty("ID", 15, 60);
+
+// нужен чтобы отображалось сколько времени вы провели в вашем приложении
+$discord->setStartTimestamp((Time::now())->getTime());
+
 $discord->updateState();
 ```
 
 <br><br>
-События в основном бесполезные тут (имхо конечно), единственное для которого есть применение это `DiscordRPC::EVENT_READY` т.к. там возвращается объект User с данными
+Callback события в основном бесполезные тут (имхо конечно), единственное для которого есть применение это `DiscordRPC::EVENT_READY` т.к. там возвращается объект User с данными (ну может кому-то захочется статистику делать, или там бан по ID сделать)
+```php
+$discord->on(DiscordRPC::EVENT_READY, function (User $user) {
+    // пример формирования ссылки для получения аватара
+    // $avatar = "https://cdn.discordapp.com/avatars/" . $user->getId() . "/" . $user->getAvatar() . ".png";
+    var_dump($user->getName());
+});
+```
 <br><br>
 Теперь по методам которые вряд ли кто-то будет использовать
 <br>
@@ -36,7 +53,7 @@ $discord->updateState();
 ```setSecrets``` - без понятия для чего он, думал может чтото в стиле создания ID для метода ```setParty``` но хз, может и не для этого ¯\\_(ツ)_/¯
 
 
-### Подключение пакета через jphp
+##### Подключение пакета через jphp
 ```
  jppm add jphp-discord-rpc-ext@git+https://github.com/silentdeath76/JPHP-DiscordRPC-ext
 ```

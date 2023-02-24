@@ -18,6 +18,7 @@
 - `->`[`clear()`](#method-clear)
 - `->`[`setSecrets()`](#method-setsecrets)
 - `->`[`updateState()`](#method-updatestate)
+- `->`[`updateCallbacks()`](#method-updatecallbacks)
 
 ---
 # Methods
@@ -117,4 +118,13 @@ setSecrets(mixed $join, mixed $spectate): void
 ### updateState()
 ```php
 updateState(): void
+```
+
+---
+
+<a name="method-updatecallbacks"></a>
+
+### updateCallbacks()
+```php
+updateCallbacks(): void
 ```

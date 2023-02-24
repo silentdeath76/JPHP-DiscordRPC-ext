@@ -185,7 +185,7 @@ public class DiscordRPCObject extends BaseObject {
 
         DiscordRPC.discordUpdatePresence(rich.build());
 
-        DiscordRPC.discordRunCallbacks();
+        updateCallbacks();
     }
 
     @Reflection.Signature
@@ -220,7 +220,25 @@ public class DiscordRPCObject extends BaseObject {
 
     @Reflection.Signature
     public void clear() {
+        this.details = "";
+        this.bigImageId = "";
+        this.bigImageHint = "";
+        this.smallImageId = "";
+        this.smallImageHint = "";
+        this.startTimestamp = 0;
+        this.endTimestamp = 0;
+        this.partyId = "";
+        this.partySize = 0;
+        this.partySizeMax = 0;
+        this.secretJoin = "";
+        this.secretSpectate = "";
+
         DiscordRPC.discordClearPresence();
+    }
+
+    @Reflection.Signature
+    public void updateCallbacks() {
+        DiscordRPC.discordRunCallbacks();
     }
 
     @Reflection.Signature

@@ -54,4 +54,8 @@ class DiscordRPC
     public function updateState(): void
     {
     }
+
+    public function updateCallbacks(): void
+    {
+    }
 }
