@@ -16,13 +16,14 @@
 $appId = ""; // ID приложения что вы создали до этого
 $discord = new DiscordRPC($appId);
 
-// заголовок если исопльзуется метод setParty 
+// заголовок
 $discord->setState("Игроков на сервере");
-
-$discord->setBigImage("ID картинки");
 
 // Подзагловок
 $discord->setDetails("...");
+
+// Иконка
+$discord->setBigImage("ID картинки");
 
 // нужен чтобы отображалось сколько времени вы провели в приложении
 $discord->setStartTimestamp((Time::now())->getTime());
