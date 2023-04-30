@@ -2,7 +2,7 @@
 
 Библиотека на основе которой собрано [Vatuu/discord-rpc](https://github.com/Vatuu/discord-rpc)
 
-##### Как скачать?
+##### Как скачать для DevelNext?
 Жми **[сюда](https://github.com/silentdeath76/JPHP-DiscordRPC-ext/releases)**
 <br>
 
