@@ -7,7 +7,6 @@ import org.develnext.jphp.ext.discordrpc.DiscordRPCExtension;
 
 import php.runtime.annotation.Reflection;
 import php.runtime.env.Environment;
-import php.runtime.invoke.InvokeHelper;
 import php.runtime.invoke.Invoker;
 import php.runtime.lang.BaseObject;
 import php.runtime.reflection.ClassEntity;
@@ -52,7 +51,6 @@ public class DiscordRPCObject extends BaseObject {
 
     @Reflection.Signature
     public void __construct(String appId) {
-
         DiscordEventHandlers handlers = new DiscordEventHandlers.Builder()
                 .setReadyEventHandler((user) -> {
                     try {
