@@ -1,14 +1,11 @@
 <?php
 
 
-namespace develnext\bundle\discor_rpc;
+namespace develnext\bundle\discord_rpc;
 
 use ide\bundle\AbstractJarBundle;
 
 class DiscordRPCBundle extends AbstractJarBundle
 {
-    function getName()
-    {
-        return "DiscordRPC";
-    }
+
 }
