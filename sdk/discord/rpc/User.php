@@ -6,7 +6,7 @@ namespace discord\rpc;
 
 /**
  * Class User
- * @package discord
+ * @packages discord
  */
 class User
 {

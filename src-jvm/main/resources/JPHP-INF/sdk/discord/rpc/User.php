@@ -4,6 +4,10 @@
 namespace discord\rpc;
 
 
+/**
+ * Class User
+ * @packages discord
+ */
 class User
 {
     public function getName(): string

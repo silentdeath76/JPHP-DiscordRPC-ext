@@ -41,9 +41,9 @@ config:
 
 develnext-bundle:
   version: 1.0.0
-  name: DiscordRpc
+  name: DiscordRPC
   author: silentrs
-  icon: "develnext/bundle/discord_rpc/icon.png"
+  icon: "develnext/bundle/discordrpc/icon.png"
   description: "Расширение для работы с DiscordRPC"
   group: "Ethernet"
-  class: develnext\bundle\discord_rpc\DiscordRPCBundle
+  class: develnext\bundle\discordrpc\DiscordRPCBundle

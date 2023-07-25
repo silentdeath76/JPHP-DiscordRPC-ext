@@ -15,6 +15,11 @@ public class DiscordRPCExtension extends Extension {
     }
 
     @Override
+    public String[] getPackageNames() {
+        return new String[] { "discord" };
+    }
+
+    @Override
     public void onRegister(CompileScope compileScope) {
         registerClass(compileScope, DiscordRPCObject.class);
         registerWrapperClass(compileScope, DiscordUser.class, UserObject.class);

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace develnext\bundle\discord_rpc;
+namespace develnext\bundle\discordrpc;
 
 use ide\bundle\AbstractJarBundle;
 
