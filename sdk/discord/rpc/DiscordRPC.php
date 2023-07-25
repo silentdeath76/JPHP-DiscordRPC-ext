@@ -3,6 +3,10 @@
 namespace discord\rpc;
 
 
+/**
+ * Class DiscordRPC
+ * @packages discord
+ */
 class DiscordRPC
 {
     const EVENT_READY = "ready";

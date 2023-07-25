@@ -4,9 +4,19 @@ version: 1.0.0
 
 devDeps:
   dn-bundle-plugin: '*'
+  jphp-runtime: '*'
 
 plugins:
   - Doc
+  - Gradle
+
+gradle:
+  repos:
+    - 'https://maven.scijava.org/content/repositories/public/'
+  deps:
+    - 'com.github.Vatuu:discord-rpc:1.6.2'
+  providedDeps:
+     - file:./vendor/jphp-runtime/jars/jphp-runtime-1.0.3.jar
 
 sources:
   - src
@@ -28,3 +38,12 @@ config:
     - /README.MD
     - /.gitignore
     - .gradle
+
+develnext-bundle:
+  version: 1.0.0
+  name: DiscordRpc
+  author: silentrs
+  icon: "develnext/bundle/discord_rpc/icon.png"
+  description: "Расширение для работы с DiscordRPC"
+  group: "Ethernet"
+  class: develnext\bundle\discord_rpc\DiscordRPCBundle
